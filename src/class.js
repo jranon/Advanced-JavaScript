@@ -9,6 +9,17 @@
 
 /* eslint-disable no-undef */ // Remove this comment once you write your classes.
 
+class User {
+  constructor(options) {
+    this.email = options.email;
+    this.password = options.password;
+  }
+  comparePasswords(str) {
+    if (str === this.password) return true;
+    return false;
+  }
+}
+
 
 // Create a class called `Animal` and a class called `Cat`.
 // `Cat` should extend the `Animal` class.
@@ -18,6 +29,25 @@
 // Cat should have the property `name` that is set in the constructor and the method
 // `meow` that should return the string `<name> meowed!` where `<name>` is the `name`
 // property set on the Cat instance.
+
+class Animal {
+  constructor(options) {
+    this.age = options.age;
+  }
+  growOlder() {
+    return this.age += 1;
+  }
+}
+
+class Cat extends Animal {
+  constructor(options) {
+    super(options, options);
+    this.name = options.name;
+  }
+  meow() {
+    return `${this.name} meowed!`;
+  }
+}
 
 
 module.exports = {
